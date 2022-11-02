@@ -1,9 +1,6 @@
 package DriverUtils.Controllers;
 
-import DriverUtils.Constants.AndroidEnvironmentVariables;
-import DriverUtils.Constants.IOSEnvironmentVariables;
-import DriverUtils.Constants.MobileCapabilityTypeSub;
-import DriverUtils.Constants.MobilePlatform;
+import DriverUtils.Constants.*;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -16,12 +13,15 @@ import java.util.concurrent.TimeUnit;
 
 public class DriverFactory {
 
-    public static AppiumDriver<MobileElement> createAppiumDriver(String appium_server_url_string, MobilePlatform platform) {
+    public static AppiumDriver<MobileElement> createAppiumDriver(MobilePlatform platform) {
         AppiumDriver<MobileElement> appiumDriver = null;
         URL appium_server_url = null;
         DesiredCapabilities desiredCapabilities = null;
         try {
-            appium_server_url = new URL(appium_server_url_string);
+            appium_server_url = new URL(AppiumServerInformation.URL_PREFIX +
+                    AppiumServerInformation.URL_IP +
+                    AppiumServerInformation.URL_PORT +
+                    AppiumServerInformation.URL_SUFFIX);
             switch (platform) {
                 case IOS:
                     desiredCapabilities = createDesiredCapabilitiesForIOSPlatform();

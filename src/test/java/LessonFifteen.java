@@ -9,8 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class LessonFifteen {
 
     public static void main(String[] args) {
-        AppiumDriver<MobileElement> appiumDriver = DriverFactory.createAppiumDriver(
-                "http://localhost:4999/wd/hub", MobilePlatform.ANDROID);
+        AppiumDriver<MobileElement> appiumDriver = DriverFactory.createAppiumDriver(MobilePlatform.ANDROID);
         WebDriverWait explicitWait = new WebDriverWait(appiumDriver, 3);
 
         try {
