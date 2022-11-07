@@ -1,10 +1,13 @@
 package DriverUtils.UserBehavior;
 
-import io.appium.java_client.touch.offset.PointOption;
+import io.appium.java_client.AppiumDriver;
 
 public interface ISwipeBehavior {
-    boolean swipeUpFromAToB(PointOption pointA, PointOption pointB,int swipeTime);
-    boolean swipeDownFromAToB(PointOption pointA, PointOption pointB, int swipeTime);
-    boolean swipeLeftFromAToB(PointOption pointA, PointOption pointB, int swipeTime);
-    boolean swipeRightFromAToB(PointOption pointA, PointOption pointB, int swipeTime);
+    void swipeFromAToB(int pointAHorizontalPosition, int pointAVerticalPosition, int pointBHorizontalPosition, int pointBVerticalPosition, int swipeTime);
+
+    void swipeToGetTheStatusPanel(AppiumDriver appiumDriver);
+
+    void swipeToGetTheNotificationPanel(AppiumDriver appiumDriver);
+
+    void swipeToBackHomeScreen(AppiumDriver appiumDriver);
 }
