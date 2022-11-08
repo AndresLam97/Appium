@@ -1,6 +1,5 @@
-package DriverUtils.UserBehavior;
+package DriverUtils.ApplicationBehavior;
 
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
 public interface IClickAndInputBehavior {

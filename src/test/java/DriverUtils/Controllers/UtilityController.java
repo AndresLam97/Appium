@@ -1,9 +1,8 @@
 package DriverUtils.Controllers;
 
-import DriverUtils.UserBehavior.IClickAndInputBehavior;
-import DriverUtils.UserBehavior.ISwipeBehavior;
+import DriverUtils.ApplicationBehavior.IClickAndInputBehavior;
+import DriverUtils.ApplicationBehavior.ISwipeBehavior;
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.internal.CapabilityHelpers;
@@ -13,7 +12,6 @@ import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.Dimension;
 
 import java.time.Duration;
-import java.util.List;
 
 public class UtilityController implements IClickAndInputBehavior, ISwipeBehavior {
     private AppiumDriver appiumDriver;

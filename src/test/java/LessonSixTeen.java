@@ -14,8 +14,8 @@ public class LessonSixTeen {
     public static void main(String[] args) {
         AppiumDriver<MobileElement> appiumDriver = DriverFactory.createAppiumDriver(MobilePlatform.ANDROID);
         UtilityController utilityController = new UtilityController(appiumDriver);
-        //fillUpALongForm(appiumDriver, utilityController);
-        getDeviceNotification(appiumDriver,utilityController);
+        fillUpALongForm(appiumDriver, utilityController);
+        getDeviceNotification(appiumDriver, utilityController);
         appiumDriver.quit();
     }
 
@@ -24,7 +24,7 @@ public class LessonSixTeen {
         try {
             MobileElement formButton = appiumDriver.findElement(MobileBy.AccessibilityId("Forms"));
             utilityController.clickAButton(formButton);
-            WebDriverWait waitDriver = new WebDriverWait(appiumDriver, 5);
+            WebDriverWait waitDriver = new WebDriverWait(appiumDriver, 2);
             waitDriver.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.AccessibilityId("text-input")));
 
             //Input value for the input text field
@@ -80,21 +80,18 @@ public class LessonSixTeen {
     }
 
     // Homework 2
-    public static void getDeviceNotification(AppiumDriver<MobileElement> appiumDriver, UtilityController utilityController)
-    {
-        try{
+    public static void getDeviceNotification(AppiumDriver<MobileElement> appiumDriver, UtilityController utilityController) {
+        try {
             utilityController.swipeToGetTheNotificationPanel();
             List<MobileElement> notificationList = appiumDriver.findElements(MobileBy.id("com.android.systemui:id/notification_main_column"));
-            if(notificationList.isEmpty())
-            {
+            if (notificationList.isEmpty()) {
                 throw new Exception("[ERROR]: There is no any notification.");
             }
             for (MobileElement mobileElement : notificationList) {
                 MobileElement notificationDetail = mobileElement.findElement(MobileBy.id("com.android.systemui:id/text"));
                 System.out.println(notificationDetail.getText());
             }
-        }catch(Exception ex)
-        {
+        } catch (Exception ex) {
             System.out.println(ex.toString());
         }
     }
