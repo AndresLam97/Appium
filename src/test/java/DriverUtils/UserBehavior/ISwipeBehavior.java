@@ -3,11 +3,11 @@ package DriverUtils.UserBehavior;
 import io.appium.java_client.AppiumDriver;
 
 public interface ISwipeBehavior {
-    void swipeFromAToB(int pointAHorizontalPosition, int pointAVerticalPosition, int pointBHorizontalPosition, int pointBVerticalPosition, int swipeTime);
+    void swipeFromAToB(int pointAHorizontalPosition, int pointAVerticalPosition, int pointBHorizontalPosition, int pointBVerticalPosition);
 
-    void swipeToGetTheStatusPanel(AppiumDriver appiumDriver);
+    void swipeToGetTheStatusPanel();
 
-    void swipeToGetTheNotificationPanel(AppiumDriver appiumDriver);
+    void swipeToGetTheNotificationPanel();
 
-    void swipeToBackHomeScreen(AppiumDriver appiumDriver);
+    void swipeToBackHomeScreen();
 }

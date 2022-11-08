@@ -3,6 +3,7 @@ package DriverUtils.Controllers;
 import DriverUtils.UserBehavior.IClickAndInputBehavior;
 import DriverUtils.UserBehavior.ISwipeBehavior;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.internal.CapabilityHelpers;
@@ -12,6 +13,7 @@ import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.Dimension;
 
 import java.time.Duration;
+import java.util.List;
 
 public class UtilityController implements IClickAndInputBehavior, ISwipeBehavior {
     private AppiumDriver appiumDriver;
@@ -19,8 +21,7 @@ public class UtilityController implements IClickAndInputBehavior, ISwipeBehavior
     private int screenHeight;
     private final int PRESS_TIME = 200;
 
-    public UtilityController(AppiumDriver appiumDriver)
-    {
+    public UtilityController(AppiumDriver appiumDriver) {
         this.appiumDriver = appiumDriver;
         Dimension screenDimension = appiumDriver.manage().window().getSize();
         screenWidth = screenDimension.getWidth();
@@ -28,24 +29,11 @@ public class UtilityController implements IClickAndInputBehavior, ISwipeBehavior
     }
 
     @Override
-    public void swipeFromAToB(int pointAHorizontalPosition, int pointAVerticalPosition, int pointBHorizontalPosition, int pointBVerticalPosition, int swipeTime) {
+    public void swipeFromAToB(int pointAHorizontalPercentage, int pointAVerticalPercentage,
+                              int pointBHorizontalPercentage, int pointBVerticalPercentage) {
         TouchAction touchAction = new TouchAction(appiumDriver);
-        PointOption pointA = generatePointByPosition(pointAHorizontalPosition, pointAVerticalPosition);
-        PointOption pointB = generatePointByPosition(pointBHorizontalPosition, pointBVerticalPosition);
-        for (int index = 0; index < swipeTime; index++) {
-            touchAction.press(pointA)
-                    .waitAction(new WaitOptions().withDuration(Duration.ofMillis(PRESS_TIME)))
-                    .moveTo(pointB)
-                    .release()
-                    .perform();
-        }
-    }
-
-    @Override
-    public void swipeToGetTheStatusPanel(AppiumDriver appiumDriver) {
-        TouchAction touchAction = new TouchAction(appiumDriver);
-        PointOption pointA = generatePointByScreenPercentage(10, 1);
-        PointOption pointB = generatePointByScreenPercentage(10, 50);
+        PointOption pointA = generatePointByScreenPercentage(pointAHorizontalPercentage, pointBVerticalPercentage);
+        PointOption pointB = generatePointByScreenPercentage(pointBHorizontalPercentage, pointBVerticalPercentage);
         touchAction.press(pointA)
                 .waitAction(new WaitOptions().withDuration(Duration.ofMillis(PRESS_TIME)))
                 .moveTo(pointB)
@@ -54,7 +42,7 @@ public class UtilityController implements IClickAndInputBehavior, ISwipeBehavior
     }
 
     @Override
-    public void swipeToGetTheNotificationPanel(AppiumDriver appiumDriver) {
+    public void swipeToGetTheStatusPanel() {
         TouchAction touchAction = new TouchAction(appiumDriver);
         PointOption pointA = generatePointByScreenPercentage(90, 1);
         PointOption pointB = generatePointByScreenPercentage(90, 50);
@@ -66,7 +54,20 @@ public class UtilityController implements IClickAndInputBehavior, ISwipeBehavior
     }
 
     @Override
-    public void swipeToBackHomeScreen(AppiumDriver appiumDriver) {
+    public void swipeToGetTheNotificationPanel() {
+        TouchAction touchAction = new TouchAction(appiumDriver);
+        PointOption pointA = generatePointByScreenPercentage(10, 1);
+        PointOption pointB = generatePointByScreenPercentage(10, 50);
+        touchAction.press(pointA)
+                .waitAction(new WaitOptions().withDuration(Duration.ofMillis(PRESS_TIME)))
+                .moveTo(pointB)
+                .release()
+                .perform();
+    }
+
+    // Pending: There is a difference way to back home screen
+    @Override
+    public void swipeToBackHomeScreen() {
         TouchAction touchAction = new TouchAction(appiumDriver);
         PointOption pointA = generatePointByScreenPercentage(50, 107);
         PointOption pointB = generatePointByScreenPercentage(50, 50);
@@ -78,7 +79,7 @@ public class UtilityController implements IClickAndInputBehavior, ISwipeBehavior
     }
 
     @Override
-    public void clickAButton(AppiumDriver appiumDriver, MobileElement theButtonNeedToClick) {
+    public void clickAButton(MobileElement theButtonNeedToClick) {
         Capabilities capabilities = appiumDriver.getCapabilities();
         String platformType = CapabilityHelpers.getCapability(capabilities, "platformName", String.class);
         if (platformType.equalsIgnoreCase("android")) {
@@ -89,20 +90,10 @@ public class UtilityController implements IClickAndInputBehavior, ISwipeBehavior
         }
     }
 
-    @Override
-    public void inputValueToTextField(MobileElement textField, String information) {
-        textField.sendKeys(information);
-    }
-
     private PointOption generatePointByScreenPercentage(int horizontalPercentage, int verticalPercentage) {
         int horizontalPosition = horizontalPercentage * (screenWidth / 100);
         int verticalPosition = verticalPercentage * (screenHeight / 100);
-        System.out.println(horizontalPosition);
-        System.out.println(verticalPosition);
         return new PointOption().withCoordinates(horizontalPosition, verticalPosition);
     }
 
-    private PointOption generatePointByPosition(int horizontalPosition, int verticalPosition) {
-        return new PointOption().withCoordinates(horizontalPosition, verticalPosition);
-    }
 }
