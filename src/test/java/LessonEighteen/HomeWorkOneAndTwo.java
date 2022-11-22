@@ -1,4 +1,6 @@
-import DriverUtils.Constants.AllAppPackageAndActivity;
+package LessonEighteen;
+
+import DriverUtils.Constants.AppPackages;
 import DriverUtils.Constants.MobilePlatform;
 import DriverUtils.Controllers.DriverFactory;
 import io.appium.java_client.AppiumDriver;
@@ -7,17 +9,12 @@ import io.appium.java_client.MobileElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
-import java.util.List;
 
-public class LessonEighTeen {
+public class HomeWorkOneAndTwo {
     public static void main(String[] args) {
         AppiumDriver<MobileElement> appiumDriver = DriverFactory.createAppiumDriver(MobilePlatform.ANDROID);
         homeWork1(appiumDriver,5);
         homeWork2(appiumDriver);
-
-
-
-
         appiumDriver.quit();
     }
 
@@ -51,7 +48,7 @@ public class LessonEighTeen {
             passwordField.sendKeys("Testing");
 
             // Switch to the setting application
-            appiumDriver.activateApp(AllAppPackageAndActivity.SETTING_APP_APP_PACKAGE);
+            appiumDriver.activateApp(AppPackages.SETTING);
 
             // Wait till the setting screen disappear
             webDriverWait.until(ExpectedConditions
@@ -72,7 +69,7 @@ public class LessonEighTeen {
                 wifiToggleButton.click();
             }
 
-            appiumDriver.activateApp(AllAppPackageAndActivity.MAIN_APP_APP_PACKAGE);
+            appiumDriver.activateApp(AppPackages.WEBDRIVER_IO);
             webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.AccessibilityId("input-email")));
 
             MobileElement loginButton = appiumDriver.findElement(MobileBy.AccessibilityId("button-LOGIN"));

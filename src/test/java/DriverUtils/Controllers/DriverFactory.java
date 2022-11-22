@@ -56,9 +56,9 @@ public class DriverFactory {
             desiredCapabilities.setCapability(MobileCapabilityTypeSub.UDID,
                     AndroidEnvironmentVariables.UDID_VARIABLE_VALUE);
             desiredCapabilities.setCapability(MobileCapabilityTypeSub.APP_PACKAGE,
-                    AllAppPackageAndActivity.MAIN_APP_APP_PACKAGE);
+                    AppPackages.WEBDRIVER_IO);
             desiredCapabilities.setCapability(MobileCapabilityTypeSub.APP_ACTIVITY,
-                    AllAppPackageAndActivity.MAIN_APP_ACTIVITY);
+                    AppActivities.WEBDRIVER_IO);
         } catch (Exception ex) {
             System.out.println("Can't create desired capabilities");
             System.out.println(ex.toString());
@@ -77,9 +77,9 @@ public class DriverFactory {
             desiredCapabilities.setCapability(MobileCapabilityTypeSub.UDID,
                     IOSEnvironmentVariables.UDID_VARIABLE_VALUE);
             desiredCapabilities.setCapability(MobileCapabilityTypeSub.APP_PACKAGE,
-                    AllAppPackageAndActivity.MAIN_APP_APP_PACKAGE);
+                    AppPackages.WEBDRIVER_IO);
             desiredCapabilities.setCapability(MobileCapabilityTypeSub.APP_ACTIVITY,
-                    AllAppPackageAndActivity.MAIN_APP_ACTIVITY);
+                    AppActivities.WEBDRIVER_IO);
         } catch (Exception ex) {
             System.out.println("Can't create desired capabilities");
             System.out.println(ex.toString());
