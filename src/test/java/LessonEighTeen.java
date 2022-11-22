@@ -6,13 +6,13 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.sql.Driver;
 import java.time.Duration;
+import java.util.List;
 
 public class LessonEighTeen {
     public static void main(String[] args) {
         AppiumDriver<MobileElement> appiumDriver = DriverFactory.createAppiumDriver(MobilePlatform.ANDROID);
+        homeWork1(appiumDriver,5);
         homeWork2(appiumDriver);
 
 
@@ -37,25 +37,49 @@ public class LessonEighTeen {
     // Then turn on/off the wifi and return back to current application
     public static void homeWork2(AppiumDriver<MobileElement> appiumDriver)
     {
+        WebDriverWait webDriverWait = new WebDriverWait(appiumDriver,1);
         try{
+            // Click the Login button on the navigate panel
+            // Then wait for 2 seconds till the input email text field appear
             appiumDriver.findElement(MobileBy.AccessibilityId("Login")).click();
-            WebDriverWait webDriverWait = new WebDriverWait(appiumDriver,2);
             webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.AccessibilityId("input-email")));
 
+            // Input the value to the email and password text field
             MobileElement emailField = appiumDriver.findElement(MobileBy.AccessibilityId("input-email"));
             MobileElement passwordField = appiumDriver.findElement(MobileBy.AccessibilityId("input-password"));
             emailField.sendKeys("NguyenVanA");
             passwordField.sendKeys("Testing");
 
-            appiumDriver.activateApp(AllAppPackageAndActivity.SETTING_APP_ACTIVITY);
-            webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.AccessibilityId("android:id/switch_widget")));
+            // Switch to the setting application
+            appiumDriver.activateApp(AllAppPackageAndActivity.SETTING_APP_APP_PACKAGE);
 
-            appiumDriver.findElement(MobileBy.AccessibilityId("android:id/switch_widget")).click();
+            // Wait till the setting screen disappear
+            webDriverWait.until(ExpectedConditions
+                    .visibilityOfElementLocated(
+                            MobileBy.AndroidUIAutomator(
+                                    "new UiSelector().resourceId(\"com.android.settings:id/homepage_title\")")));
 
-            appiumDriver.activateApp(AllAppPackageAndActivity.MAIN_APP_ACTIVITY);
-            webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.AccessibilityId("button-LOGIN")));
+            // Find and click the Internet button
+            appiumDriver.findElement(MobileBy.xpath("//*[@text='Mạng và Internet']")).click();
+            appiumDriver.findElement(MobileBy.xpath("//*[@text='Internet']")).click();
 
-            appiumDriver.findElement(MobileBy.AccessibilityId("button-LOGIN")).click();
+            // Find the wifi toggle button then click in
+            boolean isWifiOn = appiumDriver.findElements(MobileBy.xpath("//*[@text='Thêm mạng']")).isEmpty();
+            int toggleTime = isWifiOn ? 1:2;
+            MobileElement wifiToggleButton = appiumDriver.findElement(MobileBy.id("android:id/switch_widget"));
+            for(int pressingTime = 0; pressingTime < toggleTime; pressingTime++)
+            {
+                wifiToggleButton.click();
+            }
+
+            appiumDriver.activateApp(AllAppPackageAndActivity.MAIN_APP_APP_PACKAGE);
+            webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.AccessibilityId("input-email")));
+
+            MobileElement loginButton = appiumDriver.findElement(MobileBy.AccessibilityId("button-LOGIN"));
+            loginButton.click();
+
+            // For debug purpose only
+            Thread.sleep(5000);
         }catch(Exception ex)
         {
             ex.printStackTrace();
