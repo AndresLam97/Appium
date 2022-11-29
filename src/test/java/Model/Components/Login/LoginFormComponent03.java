@@ -10,6 +10,9 @@ public class LoginFormComponent03 {
     private By usernameSelector = MobileBy.AccessibilityId("input-email");
     private By passwordSelector = MobileBy.AccessibilityId("input-password");
     private By loginButtonSelector = MobileBy.AccessibilityId("button-LOGIN");
+    private By incorrectEmailSelector = MobileBy.xpath("//*[contains(@text,'Please enter a valid email address')]");
+    private By incorrectPasswordSelector = MobileBy.xpath("//*[contains(@text,'Please enter at least 8 characters')]");
+    private By loginSuccessPopupDetailSelector = MobileBy.xpath("//*[contains(@text,'You are logged in!')]");
 
     public LoginFormComponent03(AppiumDriver<MobileElement> appiumDriver) {
         this.appiumDriver = appiumDriver;
@@ -17,13 +20,17 @@ public class LoginFormComponent03 {
 
     public LoginFormComponent03 inputUserName(String username)
     {
-        appiumDriver.findElement(usernameSelector).sendKeys(username);
+        MobileElement userNameElement = appiumDriver.findElement(usernameSelector);
+        userNameElement.clear();
+        userNameElement.sendKeys(username);
         return this;
     }
 
     public LoginFormComponent03 inputPassword(String password)
     {
-        appiumDriver.findElement(passwordSelector).sendKeys(password);
+        MobileElement passwordElement = appiumDriver.findElement(passwordSelector);
+        passwordElement.clear();
+        passwordElement.sendKeys(password);
         return this;
     }
 
@@ -31,5 +38,25 @@ public class LoginFormComponent03 {
     {
         appiumDriver.findElement(loginButtonSelector).click();
         return this;
+    }
+
+    public String getIncorrectEmailText()
+    {
+        return appiumDriver.findElement(incorrectEmailSelector).getText();
+    }
+
+    public String getIncorrectPasswordText()
+    {
+        return appiumDriver.findElement(incorrectPasswordSelector).getText();
+    }
+
+    public String getLoginSuccessPopupDetailText()
+    {
+        return appiumDriver.findElement(loginSuccessPopupDetailSelector).getText();
+    }
+
+    public By getLoginSuccessPopupDetailSelector()
+    {
+        return this.loginSuccessPopupDetailSelector;
     }
 }

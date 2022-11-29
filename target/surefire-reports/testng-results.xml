@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Regression" duration-ms="80518" started-at="2022-11-29T07:19:26Z" finished-at="2022-11-29T07:20:46Z">
+    <groups>
+    </groups>
+    <test name="Test Login Screen" duration-ms="80518" started-at="2022-11-29T07:19:26Z" finished-at="2022-11-29T07:20:46Z">
+      <class name="Exercises.LessonNineteen.HomeworkWithTestNG">
+        <test-method status="PASS" signature="testSolutionOne()[pri:0, instance:Exercises.LessonNineteen.HomeworkWithTestNG@dd3b207]" name="testSolutionOne" duration-ms="41391" started-at="2022-11-29T07:19:26Z" finished-at="2022-11-29T07:20:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSolutionOne -->
+        <test-method status="PASS" signature="testSolutionTwo()[pri:0, instance:Exercises.LessonNineteen.HomeworkWithTestNG@dd3b207]" name="testSolutionTwo" duration-ms="39058" started-at="2022-11-29T07:20:07Z" finished-at="2022-11-29T07:20:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSolutionTwo -->
+      </class> <!-- Exercises.LessonNineteen.HomeworkWithTestNG -->
+    </test> <!-- Test Login Screen -->
+  </suite> <!-- Regression -->
+</testng-results>
