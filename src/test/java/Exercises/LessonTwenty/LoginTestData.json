@@ -1,0 +1,22 @@
+[
+  {
+    "email": "",
+    "password": ""
+  },
+  {
+    "email": "NguyenVanTeo",
+    "password": "12345678"
+  },
+  {
+    "email":"NguyenVanTeo@abc.com",
+    "password": ""
+  },
+  {
+    "email":"NguyenVanTeo@abc.com",
+    "password":"1234"
+  },
+  {
+    "email":"NguyenVanTeo@abc.com",
+    "password":"12345678"
+  }
+]

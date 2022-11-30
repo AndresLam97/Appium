@@ -2,7 +2,7 @@ package Exercises.LessonNineteen;
 
 import DriverUtils.Constants.MobilePlatform;
 import DriverUtils.Controllers.DriverFactory;
-import TestFlow.AllTestFlow.LoginTestFlow;
+import TestFlow.AllTestFlow.LoginTestFlowWithHardAssert;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
@@ -20,7 +20,6 @@ public class HomeworkWithoutTestNG {
     {
         try
         {
-            // Solution one
             Map<String, List<String>> testCaseData = new HashMap<>();
             testCaseData.put("Empty email", Arrays.asList("","12345678"));
             testCaseData.put("Invalid email", Arrays.asList("NguyenVanTeo","12345678"));
@@ -34,7 +33,7 @@ public class HomeworkWithoutTestNG {
                 String email = testCaseData.get(testCaseDataKey).get(EMAIL_INDEX);
                 String password = testCaseData.get(testCaseDataKey).get(PASSWORD_INDEX);
                 System.out.println("Test case name: " + testCaseDataKey);
-                LoginTestFlow loginTest = new LoginTestFlow(appiumDriver, email, password);
+                LoginTestFlowWithHardAssert loginTest = new LoginTestFlowWithHardAssert(appiumDriver, email, password);
                 loginTest.performLogin();
                 System.out.println();
             }
@@ -54,10 +53,10 @@ public class HomeworkWithoutTestNG {
             loginCredentialList.add(new LoginCredential("NguyenVanTeo@abc.com","1234"));
             loginCredentialList.add(new LoginCredential("NguyenVanTeo@abc.com","12345678"));
             for (LoginCredential loginCredential : loginCredentialList) {
-                LoginTestFlow loginTestFlow = new LoginTestFlow(appiumDriver,
+                LoginTestFlowWithHardAssert loginTestFlowWithHardAssert = new LoginTestFlowWithHardAssert(appiumDriver,
                         loginCredential.getEmail(),
                         loginCredential.getPassword());
-                loginTestFlow.performLogin();
+                loginTestFlowWithHardAssert.performLogin();
                 System.out.println();
             }
         }catch(Exception ex)

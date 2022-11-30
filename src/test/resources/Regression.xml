@@ -3,7 +3,7 @@
 <suite name="Regression" >
     <test name="Test Login Screen" >
         <classes>
-            <class name="Exercises.LessonNineteen.HomeworkWithTestNG" />
+            <class name="Exercises.LessonTwenty.TestWithJsonDataFile" />
         </classes>
     </test>
 </suite>

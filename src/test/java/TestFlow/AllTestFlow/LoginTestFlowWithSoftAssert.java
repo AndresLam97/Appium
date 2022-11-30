@@ -8,16 +8,20 @@ import io.appium.java_client.MobileElement;
 import org.apache.commons.validator.routines.EmailValidator;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
-public class LoginTestFlow extends LoginBaseFlow {
+public class LoginTestFlowWithSoftAssert extends LoginBaseFlow {
 
     private String email;
     private String password;
+    private SoftAssert softAssert;
 
-    public LoginTestFlow(AppiumDriver<MobileElement> appiumDriver, String email, String password) {
+    public LoginTestFlowWithSoftAssert(AppiumDriver<MobileElement> appiumDriver, String email, String password) {
         super(appiumDriver);
         this.email = email;
         this.password = password;
+        softAssert = new SoftAssert();
     }
 
     public void performLogin()
@@ -58,19 +62,15 @@ public class LoginTestFlow extends LoginBaseFlow {
     private void verifyIncorrectEmail(LoginFormComponent03 loginFormComp) {
         String actualErrorMessage = loginFormComp.getIncorrectEmailText();
         String expectedErrorMessage = "Please enter a valid email address";
-        System.out.println("=================================");
-        System.out.println("Verify incorrect email error message");
-        System.out.println("Actual error message: " + actualErrorMessage);
-        System.out.println("Expected error message: " + expectedErrorMessage);
+        softAssert.assertEquals(actualErrorMessage,expectedErrorMessage,"Verify incorrect email error message");
+        softAssert.assertAll();
     }
 
     private void verifyIncorrectPassword(LoginFormComponent03 loginFormComp) {
         String actualErrorMessage = loginFormComp.getIncorrectPasswordText();
         String expectedErrorMessage = "Please enter at least 8 characters";
-        System.out.println("=================================");
-        System.out.println("Verify incorrect password error message");
-        System.out.println("Actual error message: " + actualErrorMessage);
-        System.out.println("Expected error message: " + expectedErrorMessage);
+        softAssert.assertEquals(actualErrorMessage,expectedErrorMessage,"Verify incorrect password error message");
+        softAssert.assertAll();
     }
 
     private void verifyCorrectEmailAndPassword(LoginFormComponent03 loginFormComp) {
@@ -79,10 +79,8 @@ public class LoginTestFlow extends LoginBaseFlow {
                 (loginFormComp.getLoginSuccessPopupDetailSelector()));
         String actualDetailMessage = loginFormComp.getLoginSuccessPopupDetailText();
         String expectedDetailMessage = "You are logged in!";
-        System.out.println("=================================");
-        System.out.println("Verify login success popup detail message");
-        System.out.println("Actual detail message: " + actualDetailMessage);
-        System.out.println("Expected detail message: " + expectedDetailMessage);
+        softAssert.assertEquals(actualDetailMessage,expectedDetailMessage,"Verify login success popup detail message");
+        softAssert.assertAll();
     }
 
 

@@ -13,7 +13,7 @@ public class LoginBaseFlow {
     }
 
 
-    public void goToLoginScreen()
+    protected void goToLoginScreen()
     {
         LoginScreenModel03 loginScreenModel03 = new LoginScreenModel03(appiumDriver);
         loginScreenModel03.bottomNavigateButtons().clickOnLoginButton();
