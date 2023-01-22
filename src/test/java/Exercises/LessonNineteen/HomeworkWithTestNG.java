@@ -11,7 +11,6 @@ import java.util.*;
 
 public class HomeworkWithTestNG {
 
-    @Test
     private static void testSolutionOne()
     {
         AppiumDriver<MobileElement> appiumDriver = DriverFactory.createAppiumDriver(MobilePlatform.ANDROID);
@@ -43,7 +42,6 @@ public class HomeworkWithTestNG {
         }
     }
 
-    @Test
     private static void testSolutionTwo() {
         AppiumDriver<MobileElement> appiumDriver = DriverFactory.createAppiumDriver(MobilePlatform.ANDROID);
         try

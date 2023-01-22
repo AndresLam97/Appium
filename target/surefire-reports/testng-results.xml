@@ -1,21 +1,176 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="1" ignored="0" total="4" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Regression" duration-ms="80518" started-at="2022-11-29T07:19:26Z" finished-at="2022-11-29T07:20:46Z">
+  <suite name="Regression" duration-ms="34061" started-at="2023-01-22T14:38:33Z" finished-at="2023-01-22T14:39:07Z">
     <groups>
     </groups>
-    <test name="Test Login Screen" duration-ms="80518" started-at="2022-11-29T07:19:26Z" finished-at="2022-11-29T07:20:46Z">
-      <class name="Exercises.LessonNineteen.HomeworkWithTestNG">
-        <test-method status="PASS" signature="testSolutionOne()[pri:0, instance:Exercises.LessonNineteen.HomeworkWithTestNG@dd3b207]" name="testSolutionOne" duration-ms="41391" started-at="2022-11-29T07:19:26Z" finished-at="2022-11-29T07:20:07Z">
+    <test name="Test Login Screen With Data Provider" duration-ms="31923" started-at="2023-01-22T14:38:33Z" finished-at="2023-01-22T14:39:05Z">
+      <class name="Exercises.LessonTwentyOne.TestWithDataProvider">
+        <test-method status="PASS" signature="initAppiumSession(java.lang.String, java.lang.String)[pri:0, instance:Exercises.LessonTwentyOne.TestWithDataProvider@46292372]" name="initAppiumSession" is-config="true" duration-ms="44" started-at="2023-01-22T14:38:33Z" finished-at="2023-01-22T14:38:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[emulator-5554]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[6000]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSolutionOne -->
-        <test-method status="PASS" signature="testSolutionTwo()[pri:0, instance:Exercises.LessonNineteen.HomeworkWithTestNG@dd3b207]" name="testSolutionTwo" duration-ms="39058" started-at="2022-11-29T07:20:07Z" finished-at="2022-11-29T07:20:46Z">
+        </test-method> <!-- initAppiumSession -->
+        <test-method status="PASS" signature="testMethod1(Exercises.LessonNineteen.LoginCredential)[pri:0, instance:Exercises.LessonTwentyOne.TestWithDataProvider@46292372]" name="testMethod1" duration-ms="17485" started-at="2023-01-22T14:38:33Z" data-provider="MyTestFunction" finished-at="2023-01-22T14:38:50Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Exercises.LessonNineteen.LoginCredential@1faff037]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSolutionTwo -->
-      </class> <!-- Exercises.LessonNineteen.HomeworkWithTestNG -->
-    </test> <!-- Test Login Screen -->
+        </test-method> <!-- testMethod1 -->
+        <test-method status="PASS" signature="takeErrorScreenShot(org.testng.ITestResult)[pri:0, instance:Exercises.LessonTwentyOne.TestWithDataProvider@46292372]" name="takeErrorScreenShot" is-config="true" duration-ms="3" started-at="2023-01-22T14:38:51Z" finished-at="2023-01-22T14:38:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testMethod1 status=SUCCESS method=TestWithDataProvider.testMethod1(Exercises.LessonNineteen.LoginCredential)[pri:0, instance:Exercises.LessonTwentyOne.TestWithDataProvider@46292372] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeErrorScreenShot -->
+        <test-method status="PASS" signature="testMethod1(Exercises.LessonNineteen.LoginCredential)[pri:0, instance:Exercises.LessonTwentyOne.TestWithDataProvider@46292372]" name="testMethod1" duration-ms="4965" started-at="2023-01-22T14:38:51Z" data-provider="MyTestFunction" finished-at="2023-01-22T14:38:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Exercises.LessonNineteen.LoginCredential@5fff282]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMethod1 -->
+        <test-method status="PASS" signature="takeErrorScreenShot(org.testng.ITestResult)[pri:0, instance:Exercises.LessonTwentyOne.TestWithDataProvider@46292372]" name="takeErrorScreenShot" is-config="true" duration-ms="0" started-at="2023-01-22T14:38:56Z" finished-at="2023-01-22T14:38:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testMethod1 status=SUCCESS method=TestWithDataProvider.testMethod1(Exercises.LessonNineteen.LoginCredential)[pri:0, instance:Exercises.LessonTwentyOne.TestWithDataProvider@46292372] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeErrorScreenShot -->
+        <test-method status="FAIL" signature="testMethod1(Exercises.LessonNineteen.LoginCredential)[pri:0, instance:Exercises.LessonTwentyOne.TestWithDataProvider@46292372]" name="testMethod1" duration-ms="6691" started-at="2023-01-22T14:38:56Z" data-provider="MyTestFunction" finished-at="2023-01-22T14:39:02Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Exercises.LessonNineteen.LoginCredential@16d47101]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Verify login success popup detail message expected [Just using for test] but found [You are logged in!]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Verify login success popup detail message expected [Just using for test] but found [You are logged in!]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:453)
+at TestFlow.AllTestFlow.LoginTestFlowWithHardAssert.verifyCorrectEmailAndPassword(LoginTestFlowWithHardAssert.java:77)
+at TestFlow.AllTestFlow.LoginTestFlowWithHardAssert.verifyLogin(LoginTestFlowWithHardAssert.java:47)
+at TestFlow.AllTestFlow.LoginTestFlowWithHardAssert.performLogin(LoginTestFlowWithHardAssert.java:32)
+at Exercises.LessonTwentyOne.TestWithDataProvider.testMethod1(TestWithDataProvider.java:16)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMethod1 -->
+        <test-method status="PASS" signature="takeErrorScreenShot(org.testng.ITestResult)[pri:0, instance:Exercises.LessonTwentyOne.TestWithDataProvider@46292372]" name="takeErrorScreenShot" is-config="true" duration-ms="1661" started-at="2023-01-22T14:39:02Z" finished-at="2023-01-22T14:39:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testMethod1 status=FAILURE method=TestWithDataProvider.testMethod1(Exercises.LessonNineteen.LoginCredential)[pri:0, instance:Exercises.LessonTwentyOne.TestWithDataProvider@46292372] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeErrorScreenShot -->
+        <test-method status="PASS" signature="closeAppiumSession()[pri:0, instance:Exercises.LessonTwentyOne.TestWithDataProvider@46292372]" name="closeAppiumSession" is-config="true" duration-ms="733" started-at="2023-01-22T14:39:04Z" finished-at="2023-01-22T14:39:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeAppiumSession -->
+      </class> <!-- Exercises.LessonTwentyOne.TestWithDataProvider -->
+    </test> <!-- Test Login Screen With Data Provider -->
+    <test name="Test Webview" duration-ms="34061" started-at="2023-01-22T14:38:33Z" finished-at="2023-01-22T14:39:07Z">
+      <class name="Exercises.LessonTwentyOne.TestWebView">
+        <test-method status="PASS" signature="initAppiumSession(java.lang.String, java.lang.String)[pri:0, instance:Exercises.LessonTwentyOne.TestWebView@29b732a2]" name="initAppiumSession" is-config="true" duration-ms="44" started-at="2023-01-22T14:38:33Z" finished-at="2023-01-22T14:38:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[emulator-5556]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[6001]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initAppiumSession -->
+        <test-method status="PASS" signature="testWebView()[pri:0, instance:Exercises.LessonTwentyOne.TestWebView@29b732a2]" name="testWebView" duration-ms="33440" started-at="2023-01-22T14:38:33Z" finished-at="2023-01-22T14:39:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testWebView -->
+        <test-method status="PASS" signature="takeErrorScreenShot(org.testng.ITestResult)[pri:0, instance:Exercises.LessonTwentyOne.TestWebView@29b732a2]" name="takeErrorScreenShot" is-config="true" duration-ms="0" started-at="2023-01-22T14:39:06Z" finished-at="2023-01-22T14:39:06Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testWebView status=SUCCESS method=TestWebView.testWebView()[pri:0, instance:Exercises.LessonTwentyOne.TestWebView@29b732a2] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeErrorScreenShot -->
+        <test-method status="PASS" signature="closeAppiumSession()[pri:0, instance:Exercises.LessonTwentyOne.TestWebView@29b732a2]" name="closeAppiumSession" is-config="true" duration-ms="519" started-at="2023-01-22T14:39:06Z" finished-at="2023-01-22T14:39:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeAppiumSession -->
+      </class> <!-- Exercises.LessonTwentyOne.TestWebView -->
+    </test> <!-- Test Webview -->
   </suite> <!-- Regression -->
 </testng-results>

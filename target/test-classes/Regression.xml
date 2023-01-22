@@ -1,9 +1,18 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="Regression" >
-    <test name="Test Login Screen" >
+<suite name="Regression" parallel="tests" thread-count="2">
+    <test name="Test Login Screen With Data Provider" >
+        <parameter name="udid" value="emulator-5554"/>
+        <parameter name="systemPort" value="6000"/>
         <classes>
-            <class name="Exercises.LessonTwenty.TestWithJsonDataFile" />
+            <class name="Exercises.LessonTwentyOne.TestWithDataProvider" />
+        </classes>
+    </test>
+    <test name="Test Webview">
+        <parameter name="udid" value="emulator-5556"/>
+        <parameter name="systemPort" value="6001"/>
+        <classes>
+            <class name="Exercises.LessonTwentyOne.TestWebView"/>
         </classes>
     </test>
 </suite>

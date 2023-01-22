@@ -1,5 +1,6 @@
 package TestFlow.AllTestFlow;
 
+import DriverUtils.Constants.ScreenSteps.ILoginScreen;
 import Model.Components.Login.LoginFormComponent03;
 import Model.Pages.LoginScreenModel03;
 import TestFlow.BaseFlow.LoginBaseFlow;
@@ -10,7 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class LoginTestFlowWithHardAssert extends LoginBaseFlow {
+public class LoginTestFlowWithHardAssert extends LoginBaseFlow implements ILoginScreen {
 
     private String email;
     private String password;
