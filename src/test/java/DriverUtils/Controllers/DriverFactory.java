@@ -25,13 +25,13 @@ public class DriverFactory {
                     AppiumServerInformation.URL_PORT +
                     AppiumServerInformation.URL_SUFFIX);
             switch (platform) {
-                case IOS:
-                    desiredCapabilities = createDesiredCapabilitiesForIOSPlatform("","");
+                case ios:
+                    desiredCapabilities = createDesiredCapabilitiesForIOSPlatform("","","","");
                     appiumDriver = new IOSDriver<MobileElement>(appium_server_url, desiredCapabilities);
                     appiumDriver.manage().timeouts().implicitlyWait(5L, TimeUnit.SECONDS);
                     break;
-                case ANDROID:
-                    desiredCapabilities = createDesiredCapabilitiesForAndroidPlatform("","");
+                case android:
+                    desiredCapabilities = createDesiredCapabilitiesForAndroidPlatform("","","");
                     appiumDriver = new AndroidDriver<MobileElement>(appium_server_url, desiredCapabilities);
                     appiumDriver.manage().timeouts().implicitlyWait(5L, TimeUnit.SECONDS);
                     break;
@@ -48,7 +48,7 @@ public class DriverFactory {
         return appiumDriver;
     }
 
-    public AppiumDriver<MobileElement> createAppiumDriver(MobilePlatform platform,String udid, String systemPort) {
+    public AppiumDriver<MobileElement> createAppiumDriver(MobilePlatform platform, String udid, String systemPort, String platformVersion) {
         if(appiumDriver != null) return appiumDriver;
         URL appium_server_url = null;
         DesiredCapabilities desiredCapabilities = null;
@@ -58,13 +58,13 @@ public class DriverFactory {
                     AppiumServerInformation.URL_PORT +
                     AppiumServerInformation.URL_SUFFIX);
             switch (platform) {
-                case IOS:
-                    desiredCapabilities = createDesiredCapabilitiesForIOSPlatform(udid,systemPort);
+                case ios:
+                    desiredCapabilities = createDesiredCapabilitiesForIOSPlatform(platform.toString(),udid,systemPort,platformVersion);
                     appiumDriver = new IOSDriver<MobileElement>(appium_server_url, desiredCapabilities);
                     appiumDriver.manage().timeouts().implicitlyWait(5L, TimeUnit.SECONDS);
                     break;
-                case ANDROID:
-                    desiredCapabilities = createDesiredCapabilitiesForAndroidPlatform(udid, systemPort);
+                case android:
+                    desiredCapabilities = createDesiredCapabilitiesForAndroidPlatform(platform.toString(),udid, systemPort);
                     appiumDriver = new AndroidDriver<MobileElement>(appium_server_url, desiredCapabilities);
                     appiumDriver.manage().timeouts().implicitlyWait(5L, TimeUnit.SECONDS);
                     break;
@@ -81,20 +81,14 @@ public class DriverFactory {
         return appiumDriver;
     }
 
-    private static DesiredCapabilities createDesiredCapabilitiesForAndroidPlatform(String udid, String systemPort) {
+    private static DesiredCapabilities createDesiredCapabilitiesForAndroidPlatform(String platform,String udid, String systemPort) {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         try {
-            desiredCapabilities.setCapability(MobileCapabilityTypeSub.PLATFORM_NAME,
-                    AndroidEnvironmentVariables.PLATFORM_VARIABLE_VALUE);
-            desiredCapabilities.setCapability(MobileCapabilityTypeSub.AUTOMATION_NAME,
-                    AndroidEnvironmentVariables.AUTOMATION_NAME_VARIABLE_VALUE);
-            desiredCapabilities.setCapability(MobileCapabilityTypeSub.UDID,
-                    AndroidEnvironmentVariables.UDID_VARIABLE_VALUE);
-            desiredCapabilities.setCapability(MobileCapabilityTypeSub.APP_PACKAGE,
-                    AppPackages.WEBDRIVER_IO);
-            desiredCapabilities.setCapability(MobileCapabilityTypeSub.APP_ACTIVITY,
-                    AppActivities.WEBDRIVER_IO);
-            desiredCapabilities.setCapability(MobileCapabilityType.UDID,udid);
+            desiredCapabilities.setCapability(MobileCapabilityTypeSub.PLATFORM_NAME, platform);
+            desiredCapabilities.setCapability(MobileCapabilityTypeSub.AUTOMATION_NAME, "uiautomator2");
+            desiredCapabilities.setCapability(MobileCapabilityTypeSub.UDID, udid);
+            desiredCapabilities.setCapability(MobileCapabilityTypeSub.APP_PACKAGE, "com.wdiodemoapp");
+            desiredCapabilities.setCapability(MobileCapabilityTypeSub.APP_ACTIVITY,"com.wdiodemoapp.MainActivity");
             desiredCapabilities.setCapability(MobileCapabilityTypeSub.SYSTEM_PORT,systemPort);
         } catch (Exception ex) {
             System.out.println("Can't create desired capabilities");
@@ -104,21 +98,16 @@ public class DriverFactory {
         return desiredCapabilities;
     }
 
-    private static DesiredCapabilities createDesiredCapabilitiesForIOSPlatform(String udid, String systemPort) {
+    private static DesiredCapabilities createDesiredCapabilitiesForIOSPlatform(String platform, String deviceName, String wdaLocalPort, String platformVersion) {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         try {
-            desiredCapabilities.setCapability(MobileCapabilityTypeSub.PLATFORM_NAME,
-                    IOSEnvironmentVariables.PLATFORM_VARIABLE_VALUE);
-            desiredCapabilities.setCapability(MobileCapabilityTypeSub.AUTOMATION_NAME,
-                    IOSEnvironmentVariables.AUTOMATION_NAME_VARIABLE_VALUE);
-            desiredCapabilities.setCapability(MobileCapabilityTypeSub.UDID,
-                    IOSEnvironmentVariables.UDID_VARIABLE_VALUE);
-            desiredCapabilities.setCapability(MobileCapabilityTypeSub.APP_PACKAGE,
-                    AppPackages.WEBDRIVER_IO);
-            desiredCapabilities.setCapability(MobileCapabilityTypeSub.APP_ACTIVITY,
-                    AppActivities.WEBDRIVER_IO);
-            desiredCapabilities.setCapability(MobileCapabilityType.UDID,udid);
-            desiredCapabilities.setCapability(MobileCapabilityTypeSub.SYSTEM_PORT,systemPort);
+            desiredCapabilities.setCapability(MobileCapabilityTypeSub.PLATFORM_NAME, platform);
+            desiredCapabilities.setCapability(MobileCapabilityTypeSub.AUTOMATION_NAME, "XCUITest");
+            desiredCapabilities.setCapability(MobileCapabilityTypeSub.DEVICE_NAME, deviceName);
+            desiredCapabilities.setCapability(MobileCapabilityTypeSub.PLATFORM_VERSION, platformVersion);
+            desiredCapabilities.setCapability(MobileCapabilityTypeSub.BUNDLE_ID, "org.wdioNativeDemoApp");
+            desiredCapabilities.setCapability(MobileCapabilityTypeSub.WDA_LOCAL_PORT,wdaLocalPort);
+            desiredCapabilities.setCapability(MobileCapabilityTypeSub.NO_RESET, true);
         } catch (Exception ex) {
             System.out.println("Can't create desired capabilities");
             System.out.println(ex.toString());

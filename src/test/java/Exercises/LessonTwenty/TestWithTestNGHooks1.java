@@ -59,7 +59,7 @@ public class TestWithTestNGHooks1 {
     @Test(dependsOnMethods = {"testMethod2"})
     public void testMethod1()
     {
-        AppiumDriver<MobileElement> appiumDriver = DriverFactory.createAppiumDriver(MobilePlatform.ANDROID);
+        AppiumDriver<MobileElement> appiumDriver = DriverFactory.createAppiumDriver(MobilePlatform.android);
         try
         {
             Map<String, List<String>> testCaseData = new HashMap<>();
@@ -92,7 +92,7 @@ public class TestWithTestNGHooks1 {
     @Test
     public void testMethod2()
     {
-        AppiumDriver<MobileElement> appiumDriver = DriverFactory.createAppiumDriver(MobilePlatform.ANDROID);
+        AppiumDriver<MobileElement> appiumDriver = DriverFactory.createAppiumDriver(MobilePlatform.android);
         try
         {
             Map<String, List<String>> testCaseData = new HashMap<>();

@@ -12,7 +12,7 @@ import java.time.Duration;
 
 public class HomeWorkOneAndTwo {
     public static void main(String[] args) {
-        AppiumDriver<MobileElement> appiumDriver = DriverFactory.createAppiumDriver(MobilePlatform.ANDROID);
+        AppiumDriver<MobileElement> appiumDriver = DriverFactory.createAppiumDriver(MobilePlatform.android);
         homeWork1(appiumDriver,5);
         homeWork2(appiumDriver);
         appiumDriver.quit();

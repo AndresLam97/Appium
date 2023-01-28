@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Regression">
-              <span class="suite-name border-failed">Regression</span>
+              <span class="suite-name border-passed">Regression</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,21 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Regression" class="hide-methods failed suite-Regression"> (hide)</a> <!-- hide-methods failed suite-Regression -->
-                      <a href="#" panel-name="suite-Regression" class="show-methods failed suite-Regression"> (show)</a> <!-- show-methods failed suite-Regression -->
-                    </span>
-                    <div class="method-list-content failed suite-Regression">
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Regression" title="Exercises.LessonTwentyOne.TestWithDataProvider" hash-for-method="testMethod1(Exercises.LessonNineteen.LoginCredential@16d47101)">testMethod1(Exercises.LessonNineteen.LoginCredential@16d47101)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Regression -->
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -116,12 +102,17 @@
                     <div class="method-list-content passed suite-Regression">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Regression" title="Exercises.LessonTwentyOne.TestWithDataProvider" hash-for-method="testMethod1(Exercises.LessonNineteen.LoginCredential@1faff037)">testMethod1(Exercises.LessonNineteen.LoginCredential@1faff037)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Regression" title="Exercises.LessonTwentyOne.TestWithDataProvider" hash-for-method="testMethod1(Exercises.LessonNineteen.LoginCredential@4d5799a)">testMethod1(Exercises.LessonNineteen.LoginCredential@4d5799a)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Regression" title="Exercises.LessonTwentyOne.TestWithDataProvider" hash-for-method="testMethod1(Exercises.LessonNineteen.LoginCredential@5fff282)">testMethod1(Exercises.LessonNineteen.LoginCredential@5fff282)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Regression" title="Exercises.LessonTwentyOne.TestWithDataProvider" hash-for-method="testMethod1(Exercises.LessonNineteen.LoginCredential@5e8d354a)">testMethod1(Exercises.LessonNineteen.LoginCredential@5e8d354a)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Regression" title="Exercises.LessonTwentyOne.TestWithDataProvider" hash-for-method="testMethod1(Exercises.LessonNineteen.LoginCredential@1fdcfff9)">testMethod1(Exercises.LessonNineteen.LoginCredential@1fdcfff9)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -141,57 +132,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Regression" class="panel Regression">
-          <div class="suite-Regression-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">Exercises.LessonTwentyOne.TestWithDataProvider</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testMethod1(Exercises.LessonNineteen.LoginCredential@16d47101)">
-                  </a> <!-- testMethod1(Exercises.LessonNineteen.LoginCredential@16d47101) -->
-                  <span class="method-name">testMethod1</span>
-                  <span class="parameters">(Exercises.LessonNineteen.LoginCredential@16d47101)</span>
-                  <div class="stack-trace">java.lang.AssertionError: Verify login success popup detail message expected [Just using for test] but found [You are logged in!]
-	at TestFlow.AllTestFlow.LoginTestFlowWithHardAssert.verifyCorrectEmailAndPassword(LoginTestFlowWithHardAssert.java:77)
-	at TestFlow.AllTestFlow.LoginTestFlowWithHardAssert.verifyLogin(LoginTestFlowWithHardAssert.java:47)
-	at TestFlow.AllTestFlow.LoginTestFlowWithHardAssert.performLogin(LoginTestFlowWithHardAssert.java:32)
-	at Exercises.LessonTwentyOne.TestWithDataProvider.testMethod1(TestWithDataProvider.java:16)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-... Removed 21 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Regression-class-failed -->
-          <div class="suite-Regression-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">Exercises.LessonTwentyOne.TestWithDataProvider</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testMethod1(Exercises.LessonNineteen.LoginCredential@1faff037)">
-                  </a> <!-- testMethod1(Exercises.LessonNineteen.LoginCredential@1faff037) -->
-                  <span class="method-name">testMethod1</span>
-                  <span class="parameters">(Exercises.LessonNineteen.LoginCredential@1faff037)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testMethod1(Exercises.LessonNineteen.LoginCredential@5fff282)">
-                  </a> <!-- testMethod1(Exercises.LessonNineteen.LoginCredential@5fff282) -->
-                  <span class="method-name">testMethod1</span>
-                  <span class="parameters">(Exercises.LessonNineteen.LoginCredential@5fff282)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Regression-class-passed -->
           <div class="suite-Regression-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -207,6 +147,38 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Regression-class-passed -->
+          <div class="suite-Regression-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">Exercises.LessonTwentyOne.TestWithDataProvider</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testMethod1(Exercises.LessonNineteen.LoginCredential@4d5799a)">
+                  </a> <!-- testMethod1(Exercises.LessonNineteen.LoginCredential@4d5799a) -->
+                  <span class="method-name">testMethod1</span>
+                  <span class="parameters">(Exercises.LessonNineteen.LoginCredential@4d5799a)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testMethod1(Exercises.LessonNineteen.LoginCredential@5e8d354a)">
+                  </a> <!-- testMethod1(Exercises.LessonNineteen.LoginCredential@5e8d354a) -->
+                  <span class="method-name">testMethod1</span>
+                  <span class="parameters">(Exercises.LessonNineteen.LoginCredential@5e8d354a)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testMethod1(Exercises.LessonNineteen.LoginCredential@1fdcfff9)">
+                  </a> <!-- testMethod1(Exercises.LessonNineteen.LoginCredential@1fdcfff9) -->
+                  <span class="method-name">testMethod1</span>
+                  <span class="parameters">(Exercises.LessonNineteen.LoginCredential@1fdcfff9)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Regression-class-passed -->
         </div> <!-- panel Regression -->
         <div panel-name="test-xml-Regression" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -218,14 +190,16 @@
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite thread-count=&quot;2&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;Regression&quot; parallel=&quot;tests&quot;&gt;
   &lt;test thread-count=&quot;2&quot; verbose=&quot;0&quot; name=&quot;Test Login Screen With Data Provider&quot; parallel=&quot;tests&quot;&gt;
-    &lt;parameter name=&quot;udid&quot; value=&quot;emulator-5554&quot;/&gt;
+    &lt;parameter name=&quot;udid&quot; value=&quot;emulator-5556&quot;/&gt;
+    &lt;parameter name=&quot;platformName&quot; value=&quot;android&quot;/&gt;
     &lt;parameter name=&quot;systemPort&quot; value=&quot;6000&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;Exercises.LessonTwentyOne.TestWithDataProvider&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test Login Screen With Data Provider --&gt;
   &lt;test thread-count=&quot;2&quot; verbose=&quot;0&quot; name=&quot;Test Webview&quot; parallel=&quot;tests&quot;&gt;
-    &lt;parameter name=&quot;udid&quot; value=&quot;emulator-5556&quot;/&gt;
+    &lt;parameter name=&quot;udid&quot; value=&quot;emulator-5554&quot;/&gt;
+    &lt;parameter name=&quot;platformName&quot; value=&quot;android&quot;/&gt;
     &lt;parameter name=&quot;systemPort&quot; value=&quot;6001&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;Exercises.LessonTwentyOne.TestWebView&quot;/&gt;
@@ -275,24 +249,24 @@ data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testWebView')
 data.setCell(0, 2, 'Exercises.LessonTwentyOne.TestWebView')
-data.setCell(0, 3, 33440);
+data.setCell(0, 3, 30563);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'testMethod1')
 data.setCell(1, 2, 'Exercises.LessonTwentyOne.TestWithDataProvider')
-data.setCell(1, 3, 17485);
+data.setCell(1, 3, 16802);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'testMethod1')
 data.setCell(2, 2, 'Exercises.LessonTwentyOne.TestWithDataProvider')
-data.setCell(2, 3, 6691);
+data.setCell(2, 3, 6596);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'testMethod1')
 data.setCell(3, 2, 'Exercises.LessonTwentyOne.TestWithDataProvider')
-data.setCell(3, 3, 4965);
+data.setCell(3, 3, 4991);
 window.suiteTableData['Regression']= { tableData: data, tableDiv: 'times-div-Regression'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 58 seconds</span>
               <div id="times-div-Regression">
               </div> <!-- times-div-Regression -->
             </div> <!-- times-div -->
@@ -320,63 +294,67 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">Exercises.LessonTwentyOne.TestWithDataProvider</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">initAppiumSession(emulator-5554, 6000)</span>
+                <span class="method-name">initAppiumSession(emulator-5556, 6000, android, platformVersion)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">Exercises.LessonTwentyOne.TestWebView</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">initAppiumSession(emulator-5556, 6001)</span>
+                <span class="method-name">initAppiumSession(emulator-5554, 6001, android, platformVersion)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
-              <div class="test-method">
-                <span class="method-name">testWebView</span>
-                <span class="method-start">85 ms</span>
-              </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">Exercises.LessonTwentyOne.TestWithDataProvider</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">testMethod1(Exercises.LessonNineteen.LoginCredential@1faff037)</span>
-                <span class="method-start">85 ms</span>
+                <span class="method-name">testMethod1(Exercises.LessonNineteen.LoginCredential@4d5799a)</span>
+                <span class="method-start">87 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">Exercises.LessonTwentyOne.TestWebView</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">testWebView</span>
+                <span class="method-start">87 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">Exercises.LessonTwentyOne.TestWithDataProvider</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">takeErrorScreenShot([TestResult name=testMethod1 status=SUCCESS method=TestWithDataProvider.testMethod1(Exercises.Lesson...)</span>
+                <span class="method-start">17138 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">testMethod1(Exercises.LessonNineteen.LoginCredential@5e8d354a)</span>
+                <span class="method-start">17172 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">takeErrorScreenShot([TestResult name=testMethod1 status=SUCCESS method=TestWithDataProvider.testMethod1(Exercises.Lesson...)</span>
-                <span class="method-start">17805 ms</span>
+                <span class="method-start">22166 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">testMethod1(Exercises.LessonNineteen.LoginCredential@5fff282)</span>
-                <span class="method-start">17826 ms</span>
+                <span class="method-name">testMethod1(Exercises.LessonNineteen.LoginCredential@1fdcfff9)</span>
+                <span class="method-start">22168 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">takeErrorScreenShot([TestResult name=testMethod1 status=SUCCESS method=TestWithDataProvider.testMethod1(Exercises.Lesson...)</span>
-                <span class="method-start">22795 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">testMethod1(Exercises.LessonNineteen.LoginCredential@16d47101)</span>
-                <span class="method-start">22796 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">takeErrorScreenShot([TestResult name=testMethod1 status=FAILURE method=TestWithDataProvider.testMethod1(Exercises.Lesson...)</span>
-                <span class="method-start">29509 ms</span>
+                <span class="method-start">28768 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-test after">
                 <span class="method-name">closeAppiumSession</span>
-                <span class="method-start">31179 ms</span>
+                <span class="method-start">28771 ms</span>
               </div> <!-- configuration-test after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">Exercises.LessonTwentyOne.TestWebView</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">takeErrorScreenShot([TestResult name=testWebView status=SUCCESS method=TestWebView.testWebView()[pri:0, instance:Exercis...)</span>
-                <span class="method-start">33528 ms</span>
+                <span class="method-start">30652 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-test after">
                 <span class="method-name">closeAppiumSession</span>
-                <span class="method-start">33530 ms</span>
+                <span class="method-start">30654 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -9,13 +9,11 @@ import io.appium.java_client.MobileElement;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.util.*;
-
 public class TestWithDataProvider {
 
     @Test(dataProvider = "MyTestFunction")
      void testMethod1(LoginCredential loginCredential) {
-        AppiumDriver<MobileElement> appiumDriver = DriverFactory.createAppiumDriver(MobilePlatform.ANDROID);
+        AppiumDriver<MobileElement> appiumDriver = DriverFactory.createAppiumDriver(MobilePlatform.android);
         try {
             LoginTestFlowWithHardAssert loginTestFlowWithHardAssert = new LoginTestFlowWithHardAssert(appiumDriver,
                     loginCredential.getEmail(),

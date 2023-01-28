@@ -5,7 +5,6 @@ import DriverUtils.Controllers.DriverFactory;
 import TestFlow.AllTestFlow.LoginTestFlowWithHardAssert;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import org.testng.annotations.Test;
 
 import java.util.*;
 
@@ -13,7 +12,7 @@ public class HomeworkWithTestNG {
 
     private static void testSolutionOne()
     {
-        AppiumDriver<MobileElement> appiumDriver = DriverFactory.createAppiumDriver(MobilePlatform.ANDROID);
+        AppiumDriver<MobileElement> appiumDriver = DriverFactory.createAppiumDriver(MobilePlatform.android);
         try
         {
             Map<String, List<String>> testCaseData = new HashMap<>();
@@ -43,7 +42,7 @@ public class HomeworkWithTestNG {
     }
 
     private static void testSolutionTwo() {
-        AppiumDriver<MobileElement> appiumDriver = DriverFactory.createAppiumDriver(MobilePlatform.ANDROID);
+        AppiumDriver<MobileElement> appiumDriver = DriverFactory.createAppiumDriver(MobilePlatform.android);
         try
         {
             List<LoginCredential> loginCredentialList = new ArrayList<>();

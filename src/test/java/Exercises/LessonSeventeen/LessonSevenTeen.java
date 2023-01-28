@@ -16,7 +16,7 @@ public class LessonSevenTeen {
     public static void main(String[] args) {
 
         // Working with hybird context
-        AppiumDriver<MobileElement> appiumDriver = DriverFactory.createAppiumDriver(MobilePlatform.ANDROID);
+        AppiumDriver<MobileElement> appiumDriver = DriverFactory.createAppiumDriver(MobilePlatform.android);
         try {
             appiumDriver.findElement(MobileBy.AccessibilityId("Webview")).click();
             WebDriverWait webDriverWait = new WebDriverWait(appiumDriver, 1);

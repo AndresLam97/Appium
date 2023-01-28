@@ -10,7 +10,7 @@ import java.util.*;
 
 public class HomeworkWithoutTestNG {
     public static void main(String[] args) {
-        AppiumDriver<MobileElement> appiumDriver = DriverFactory.createAppiumDriver(MobilePlatform.ANDROID);
+        AppiumDriver<MobileElement> appiumDriver = DriverFactory.createAppiumDriver(MobilePlatform.android);
         //testSolutionOne(appiumDriver);
         //testSolutionTwo(appiumDriver);
         appiumDriver.quit();

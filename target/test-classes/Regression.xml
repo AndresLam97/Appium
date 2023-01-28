@@ -2,17 +2,20 @@
 
 <suite name="Regression" parallel="tests" thread-count="2">
     <test name="Test Login Screen With Data Provider" >
-        <parameter name="udid" value="emulator-5554"/>
+        <parameter name="udid" value="emulator-5556"/>
         <parameter name="systemPort" value="6000"/>
+        <parameter name="platformName" value="android"></parameter>
         <classes>
             <class name="Exercises.LessonTwentyOne.TestWithDataProvider" />
         </classes>
     </test>
     <test name="Test Webview">
-        <parameter name="udid" value="emulator-5556"/>
+        <parameter name="udid" value="emulator-5554"/>
         <parameter name="systemPort" value="6001"/>
+        <parameter name="platformName" value="android"></parameter>
         <classes>
             <class name="Exercises.LessonTwentyOne.TestWebView"/>
         </classes>
     </test>
+
 </suite>

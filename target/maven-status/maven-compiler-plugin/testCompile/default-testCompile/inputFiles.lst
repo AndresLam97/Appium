@@ -3,7 +3,6 @@ C:\Users\Andres\Desktop\LearnGit\Appium\src\test\java\Exercises\LessonTwenty\Tes
 C:\Users\Andres\Desktop\LearnGit\Appium\src\test\java\TestFlow\AllTestFlow\LoginTestFlowWithHardAssert.java
 C:\Users\Andres\Desktop\LearnGit\Appium\src\test\java\Model\Components\Login\LoginFormComponent03.java
 C:\Users\Andres\Desktop\LearnGit\Appium\src\test\java\DriverUtils\Controllers\WaitForMoreThanOneContext.java
-C:\Users\Andres\Desktop\LearnGit\Appium\src\test\java\DriverUtils\Constants\IOSEnvironmentVariables.java
 C:\Users\Andres\Desktop\LearnGit\Appium\src\test\java\Model\Components\Login\LoginFormComponent01.java
 C:\Users\Andres\Desktop\LearnGit\Appium\src\test\java\DriverUtils\ApplicationBehavior\ITakeScreenShotBehavior.java
 C:\Users\Andres\Desktop\LearnGit\Appium\src\test\java\DriverUtils\Controllers\TakeScreenShotController.java
@@ -22,6 +21,7 @@ C:\Users\Andres\Desktop\LearnGit\Appium\src\test\java\Exercises\LessonEighteen\H
 C:\Users\Andres\Desktop\LearnGit\Appium\src\test\java\DriverUtils\ApplicationBehavior\ISwipeBehavior.java
 C:\Users\Andres\Desktop\LearnGit\Appium\src\test\java\Model\Pages\LoginScreenModel01.java
 C:\Users\Andres\Desktop\LearnGit\Appium\src\test\java\Model\Pages\LoginScreenModel03.java
+C:\Users\Andres\Desktop\LearnGit\Appium\src\test\java\DriverUtils\Constants\ScreenSteps\ILoginScreen.java
 C:\Users\Andres\Desktop\LearnGit\Appium\src\test\java\Exercises\BaseTest.java
 C:\Users\Andres\Desktop\LearnGit\Appium\src\test\java\TestFlow\AllTestFlow\LoginTestFlowWithSoftAssert.java
 C:\Users\Andres\Desktop\LearnGit\Appium\src\test\java\Exercises\LessonTwenty\TestWithTestNGHooks2.java
@@ -31,7 +31,6 @@ C:\Users\Andres\Desktop\LearnGit\Appium\src\test\java\DriverUtils\Constants\Cont
 C:\Users\Andres\Desktop\LearnGit\Appium\src\test\java\Exercises\LessonTwenty\TestWithJsonDataFile.java
 C:\Users\Andres\Desktop\LearnGit\Appium\src\test\java\TestFlow\BaseFlow\LoginBaseFlow.java
 C:\Users\Andres\Desktop\LearnGit\Appium\src\test\java\Exercises\LessonNineteen\HomeworkWithoutTestNG.java
-C:\Users\Andres\Desktop\LearnGit\Appium\src\test\java\DriverUtils\Constants\AndroidEnvironmentVariables.java
 C:\Users\Andres\Desktop\LearnGit\Appium\src\test\java\DriverUtils\Constants\AppActivities.java
 C:\Users\Andres\Desktop\LearnGit\Appium\src\test\java\DriverUtils\Constants\MobilePlatform.java
 C:\Users\Andres\Desktop\LearnGit\Appium\src\test\java\DriverUtils\Controllers\UtilityController.java

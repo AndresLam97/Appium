@@ -14,7 +14,7 @@ import java.util.List;
 public class LessonSixTeen {
 
     public static void main(String[] args) {
-        AppiumDriver<MobileElement> appiumDriver = DriverFactory.createAppiumDriver(MobilePlatform.ANDROID);
+        AppiumDriver<MobileElement> appiumDriver = DriverFactory.createAppiumDriver(MobilePlatform.android);
         UtilityController utilityController = new UtilityController(appiumDriver);
         fillUpALongForm(appiumDriver, utilityController);
         getDeviceNotification(appiumDriver, utilityController);

@@ -13,6 +13,7 @@ Model\Components\Login\LoginFormComponent03.class
 DriverUtils\Controllers\UtilityController.class
 DriverUtils\Controllers\TakeScreenShotController.class
 DriverUtils\Constants\ContextInformation.class
+DriverUtils\Constants\ScreenSteps\ILoginScreen.class
 Exercises\LessonTwenty\TestWithTestNGHooks2.class
 Model\Components\Global\BottomNavigateButtons.class
 DriverUtils\Constants\AppActivities.class
@@ -21,7 +22,6 @@ Exercises\LessonNineteen\HomeworkWithTestNG.class
 DriverUtils\Constants\AppPackages.class
 Exercises\LessonEighteen\TestLoginScreenModel1.class
 TestFlow\BaseFlow\LoginBaseFlow.class
-DriverUtils\Constants\IOSEnvironmentVariables.class
 Exercises\LessonSixteen\LessonSixTeen.class
 Exercises\LessonNineteen\HomeworkWithoutTestNG.class
 Exercises\LessonEighteen\TestLoginScreenModel2.class
@@ -40,4 +40,3 @@ Exercises\LessonTwenty\TestWithJsonDataFile.class
 Exercises\LessonEighteen\HomeWorkOneAndTwo.class
 DriverUtils\Constants\MobileCapabilityTypeSub.class
 Model\Pages\LoginScreenModel03.class
-DriverUtils\Constants\AndroidEnvironmentVariables.class

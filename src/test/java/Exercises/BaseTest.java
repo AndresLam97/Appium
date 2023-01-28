@@ -7,11 +7,11 @@ import io.appium.java_client.MobileElement;
 import io.qameta.allure.Allure;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.Platform;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
+
+import javax.annotation.Nullable;
 import java.io.File;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -29,18 +29,22 @@ public class BaseTest {
     private static ThreadLocal<DriverFactory> driverThread;
     private String udid;
     private String systemPort;
+    private String platformName;
+    private String platformVersion;
 
     public AppiumDriver<MobileElement> getDriver()
     {
-        return driverThread.get().createAppiumDriver(MobilePlatform.ANDROID,this.udid,this.systemPort);
+        return driverThread.get().createAppiumDriver(MobilePlatform.valueOf(this.platformName),this.udid,this.systemPort,this.platformVersion);
     }
 
     @BeforeTest
-    @Parameters({"udid","systemPort"})
-    public void initAppiumSession(String udid, String systemPort)
+    @Parameters({"udid","systemPort","platformName","platformVersion"})
+    public void initAppiumSession(String udid, String systemPort, String platformName, @Optional("platformVersion") String platformVersion)
     {
             this.udid = udid;
             this.systemPort = systemPort;
+            this.platformName = platformName;
+            this.platformVersion = platformVersion;
             driverThread = ThreadLocal.withInitial(()->{
                DriverFactory driverFactory = new DriverFactory();
                driverThreadPool.add(driverFactory);

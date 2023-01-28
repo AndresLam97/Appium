@@ -10,7 +10,7 @@ import io.appium.java_client.MobileElement;
 public class TestLoginScreenModel1 {
     public static void main(String[] args) {
         AppiumDriver<MobileElement> appiumDriver = DriverFactory
-                .createAppiumDriver(MobilePlatform.ANDROID);
+                .createAppiumDriver(MobilePlatform.android);
         try
         {
             LoginScreenModel01 loginScreenModel01 = new LoginScreenModel01(appiumDriver);

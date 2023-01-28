@@ -24,8 +24,8 @@ public class TestWithDataProvider extends BaseTest {
     {
         LoginCredential[] loginCredentialList = new LoginCredential[] {new LoginCredential("","12345678")
         ,new LoginCredential("NguyenVanTeo","12345678")
-        /*,new LoginCredential("NguyenVanTeo@abc.com","")
-        ,new LoginCredential("NguyenVanTeo@abc.com","1234")*/
+        ,new LoginCredential("NguyenVanTeo@abc.com","")
+        ,new LoginCredential("NguyenVanTeo@abc.com","1234")
         ,new LoginCredential("NguyenVanTeo@abc.com","12345678")};
         return loginCredentialList;
     }

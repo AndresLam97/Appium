@@ -70,9 +70,6 @@ public class LoginTestFlowWithHardAssert extends LoginBaseFlow implements ILogin
     }
 
     private void verifyCorrectEmailAndPassword(LoginFormComponent03 loginFormComp) {
-        WebDriverWait waitDriver = new WebDriverWait(appiumDriver,5L);
-        waitDriver.until(ExpectedConditions.visibilityOfElementLocated
-                (loginFormComp.getLoginSuccessPopupDetailSelector()));
         String actualDetailMessage = loginFormComp.getLoginSuccessPopupDetailText();
         String expectedDetailMessage = "You are logged in!";
         Assert.assertEquals(actualDetailMessage,expectedDetailMessage,"Verify login success popup detail message");
